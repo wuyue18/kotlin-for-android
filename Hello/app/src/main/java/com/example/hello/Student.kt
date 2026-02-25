@@ -5,7 +5,7 @@ import android.util.Log
 //类后边接上（）就是主构造方法，主构造方法中声明变量就相当于在类里声明了属性
 //继承其他类时必须调用父类的主构造函数
 //这里gender没加var是因为他已经是父类的属性了，再加声明就相当于在子类又声明了属性，重复了
-class Student(var grade: String, gender: String) : Person(gender) {
+class Student(var grade: String, gender: String) : Person(gender), Stydy{
     init {
         Log.e("年级", grade)
     }
@@ -18,6 +18,14 @@ class Student(var grade: String, gender: String) : Person(gender) {
 
     //这个函数调用了第一个次构造函数属于间接调用
     constructor() : this("", 0) {
+    }
+
+    override fun readBook() {
+        TODO("Not yet implemented")
+    }
+
+    override fun doHomeWork() {
+        TODO("Not yet implemented")
     }
 
 

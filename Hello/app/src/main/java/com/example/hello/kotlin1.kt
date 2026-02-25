@@ -139,5 +139,49 @@ class kotlin1 {
         p.age = 20
         p.printInfo()
     }
-    //类的继承 与java不同，kotlin的类默认是不可继承的，相当于默认使用final修饰，想要继承需要使用open进行修饰
+
+
+    //集合
+    //list
+    fun listMethod(){
+        //常规方案
+        val  list1 = ArrayList<String>()
+        list1.add("apple")
+        list1.add("banana")
+        list1.add("orange")
+        //kotlin方式
+        //listof 创建的集合是不可变的
+        val list2 = listOf<String>("apple","banana","orange")
+        //mutableListOf创建的集合是可变的
+        val list3 = mutableListOf<String>("apple","banana","orange")
+        list3.add("Watermelon")
+
+        for (fruit in list2){
+            Log.e("fruit",fruit)
+        }
+    }
+    //set的方法都是和list一样的只是把list替换成map
+    fun mapMethod(){
+        val map1 = HashMap<String, Int>()
+        map1.put("apple",1)//kotlin不建议这种写法
+        map1["apple"] = 1
+        //同样可以这样取数
+        val apple = map1["apple"]
+        //map同样有mapOf和mutableMapOf()
+        val  map2 = mapOf<String, Int>("apple" to 1,"banana" to 2)
+        val  map3 = mutableMapOf<String, Int>("apple" to 1,"banana" to 2)
+        map3["Watermelon"] = 3
+        //map同样可以使用for in遍历
+        for ((fruit,number) in map3){
+            Log.e(fruit,number.toString())
+        }
+
+
+    }
+    //集合的函数式api与Lambda表达式
+    fun lambdaMethod(){
+        //标准结构：{参数名1: 参数类型, 参数名2: 参数类型 -> 函数体}
+    }
+
+
 }
