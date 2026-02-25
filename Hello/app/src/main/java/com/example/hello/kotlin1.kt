@@ -1,4 +1,5 @@
-import android.R
+package com.example.hello
+
 import android.util.Log
 import kotlin.math.max
 
@@ -97,4 +98,46 @@ class kotlin1 {
         name.startsWith("tom") -> 80
         else -> 90
     }
+
+    //循环语句
+    //while循环与java一致
+    fun getSingle(param1: Int): Int {
+        var count = 0
+        var number = 0
+        while (number <= param1) {
+            if (number % 2 == 1) {
+                count++
+
+            }
+            number++
+        }
+        return count
+    }
+
+    //kotlin的区间
+    fun rangeTest() {
+        //..表示左闭右闭区间
+        val range = 0..10
+        for (i in 0..10) {
+            Log.e("i", i.toString())
+        }
+        //until表示左闭右开区间
+        for (i in 0 until 10 step 2) {
+            Log.e("i", i.toString())
+        }
+        //downTo降序左闭右闭区间
+        for (i in 10 downTo 0 step 2) {
+            Log.e("i", i.toString())
+        }
+    }
+
+
+    //类和对象
+    fun createPerson() {
+        val p = Person("男")
+        p.name = "zs"
+        p.age = 20
+        p.printInfo()
+    }
+    //类的继承 与java不同，kotlin的类默认是不可继承的，相当于默认使用final修饰，想要继承需要使用open进行修饰
 }
